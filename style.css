@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(213, 213, 184);
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.screen {
+    border: solid;
+    height: 50px;
+    margin: 20px;
+}
+.calculator {
+    width: 500px;
+    border: solid;
+    border-radius: 5px;
+}
+
+.btns-box {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.btns {
+    border: solid;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.clear {
+    grid-column: span 4;
+}
