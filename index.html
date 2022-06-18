@@ -8,25 +8,29 @@
     <body>
         <div class="container">
             <div class="calculator">
-                <div class="screen">blank screen</div>
+                <div class="screen">
+                    <div class="previousNum"></div>
+                    <div class="currentNum">0</div>
+                </div>
                 <div class="btns-box">
-                    <button class="btns clear">clear</button>
-                    <button class="btns">7</button>
-                    <button class="btns">8</button>
-                    <button class="btns">9</button>
-                    <button class="btns">%</button>
-                    <button class="btns">4</button>
-                    <button class="btns">5</button>
-                    <button class="btns">6</button>
-                    <button class="btns">x</button>
-                    <button class="btns">1</button>
-                    <button class="btns">2</button>
-                    <button class="btns">3</button>
-                    <button class="btns">-</button>
-                    <button class="btns">.</button>
-                    <button class="btns">0</button>
-                    <button class="btns">=</button>
-                    <button class="btns">+</button>
+                    <button class="btns clear" data-clear>clear</button>
+                    <button class="btns clear delete">delete</button> 
+                    <button class="btns" data-number>7</button>
+                    <button class="btns" data-number>8</button>
+                    <button class="btns" data-number>9</button>
+                    <button class="btns" data-operation>/</button>
+                    <button class="btns" data-number>4</button>
+                    <button class="btns" data-number>5</button>
+                    <button class="btns" data-number>6</button>
+                    <button class="btns" data-operation>x</button>
+                    <button class="btns" data-number>1</button>
+                    <button class="btns" data-number>2</button>
+                    <button class="btns" data-number>3</button>
+                    <button class="btns" data-operation>-</button>
+                    <button class="btns" data-number>.</button>
+                    <button class="btns" data-number>0</button>
+                    <button class="btns" data-equal>=</button>
+                    <button class="btns" data-operation>+</button>
                 </div>
             </div>
         </div>

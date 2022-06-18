@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(213, 213, 184);
+    background-color: rgba(172, 172, 158, 0.423);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -8,17 +8,25 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 50px;
+    margin: 50px;
 }
 
 .screen {
     border: solid;
+    border-radius: 5px;
     height: 50px;
     margin: 20px;
+    background-color: rgb(222, 222, 222);
+    text-align: right;
+    padding: 10px;
+    font-size: 24px;
 }
 .calculator {
-    width: 500px;
+    width: 350px;
     border: solid;
     border-radius: 5px;
+    background-color: lightgray;
 }
 
 .btns-box {
@@ -32,8 +40,16 @@ body {
     border: solid;
     border-radius: 5px;
     font-size: 20px;
+    padding: 20px
 }
 
-.clear {
-    grid-column: span 4;
+.btns:hover {
+    background-color: darkgray; 
+}
+
+.btns:active {
+    background-color: gray;
+}
+.clear{
+    grid-column: span 2;
 }
