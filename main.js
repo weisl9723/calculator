@@ -17,6 +17,8 @@ clearBtn.addEventListener('click', clear);
 deleteBtn.addEventListener('click', deleteNum);
 decimalBtn.addEventListener('click', addDecimal);
 
+window.addEventListener('keydown', handleKeyboard);
+
 numberBtn.forEach(button => {
     button.addEventListener('click', (e) => {
         displayNumber(button.textContent);
@@ -109,4 +111,25 @@ function clear(){
 function deleteNum(){
     currentNum = currentNum.slice(0, -1);
     currentSaveNum.textContent = currentNum;
+}
+
+function handleKeyboard(e){
+    if (e.key >= 0 && e.key <= 9){
+        displayNumber(e.key);
+    }
+    if (e.key === "Backspace"){
+        deleteNum();
+    }
+    if (e.key === "Enter" || e.key === '='){
+        evaluate();
+    }
+    if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/'){
+        displayOperator(e.key);
+    }
+    if (e.key === '.'){
+        addDecimal();
+    }
+    if (e.key === "Escape"){
+        clear();
+    }
 }
