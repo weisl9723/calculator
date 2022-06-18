@@ -7,6 +7,7 @@ const operationBtn = document.querySelectorAll('[data-operation]');
 const clearBtn = document.querySelector('[data-clear]');
 const equalBtn = document.querySelector('[data-equal]');
 const deleteBtn = document.querySelector('.delete');
+const decimalBtn = document.querySelector('.decimal');
 
 const currentSaveNum = document.querySelector('.currentNum');
 const previousSaveNum = document.querySelector('.previousNum');
@@ -14,7 +15,7 @@ const previousSaveNum = document.querySelector('.previousNum');
 equalBtn.addEventListener('click', evaluate);
 clearBtn.addEventListener('click', clear);
 deleteBtn.addEventListener('click', deleteNum);
-
+decimalBtn.addEventListener('click', addDecimal);
 
 numberBtn.forEach(button => {
     button.addEventListener('click', (e) => {
@@ -23,9 +24,25 @@ numberBtn.forEach(button => {
 })
 
 function displayNumber(number){
-    currentNum += number;
-    currentSaveNum.textContent = currentNum;
+    if (currentNum === "0"){
+        return;
+    }
 
+    if (previousNum !== "" && currentNum !== "" && operator === "") {
+        clear();
+      }
+
+    if (currentNum.length <= 14){
+        currentNum += number;
+        currentSaveNum.textContent = currentNum;
+    }
+}
+
+function addDecimal(){
+    if (!currentNum.includes(".")) {
+        currentNum += ".";
+        currentSaveNum.textContent = currentNum;
+      }
 }
 
 operationBtn.forEach(button => {
@@ -52,12 +69,12 @@ function displayOperator(op){
 
 
 function evaluate(){
-    if (operator === ""){
+    if (operator === "" || currentNum === ""){
         return;
     }
 
     if (operator === "+") {
-        previousNum = parseInt(previousNum) + parseInt(currentNum);
+        previousNum = parseFloat(previousNum) + parseFloat(currentNum);
     }
     else if (operator === "-") {
         previousNum -= currentNum;
@@ -66,9 +83,13 @@ function evaluate(){
         previousNum *= currentNum;
     }
     else if (operator === "/") {
+        if (currentNum === "0"){
+            return currentSaveNum.textContent = "Can't Divide By Zero";
+        }
         previousNum /= currentNum;
     }
 
+    operator = "";
     currentSaveNum.textContent = previousNum;
 
 }
