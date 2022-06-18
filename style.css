@@ -17,7 +17,7 @@ body {
     border-radius: 5px;
     height: 50px;
     margin: 20px;
-    background-color: rgb(222, 222, 222);
+    background-color: rgb(238, 232, 232);
     text-align: right;
     padding: 10px;
     font-size: 24px;
@@ -25,8 +25,8 @@ body {
 .calculator {
     width: 350px;
     border: solid;
-    border-radius: 5px;
-    background-color: lightgray;
+    border-radius: 10px;
+    background-color: rgb(219, 130, 130);
 }
 
 .btns-box {
@@ -38,9 +38,19 @@ body {
 
 .btns {
     border: solid;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 20px;
-    padding: 20px
+    padding: 20px;
+}
+
+.btns-op {
+    background-color: rgba(245, 108, 108, 0.516);
+    color: white;
+}
+
+.btns-equal, .clear{
+    background-color: rgba(194, 132, 70, 0.516);
+    color: white;
 }
 
 .btns:hover {

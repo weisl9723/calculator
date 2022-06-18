@@ -32,7 +32,7 @@ function displayNumber(number){
         clear();
       }
 
-    if (currentNum.length <= 14){
+    if (currentNum.length <= 11){
         currentNum += number;
         currentSaveNum.textContent = currentNum;
     }
@@ -90,10 +90,14 @@ function evaluate(){
     }
 
     operator = "";
+    previousNum = roundNumber(previousNum);
     currentSaveNum.textContent = previousNum;
 
 }
 
+function roundNumber(number){
+    return Math.round(previousNum * 10000000) / 10000000;
+}
 function clear(){
     previousNum = "";
     currentNum = "";
